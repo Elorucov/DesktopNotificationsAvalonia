@@ -141,6 +141,16 @@ namespace DesktopNotifications.Windows
             xw.WriteString(notification.Body ?? string.Empty);
             xw.WriteEndElement();
 
+            if (!String.IsNullOrWhiteSpace(notification.Avatar)) {
+                xw.WriteStartElement("image");
+
+                xw.WriteAttributeString("placement", "appLogoOverride");
+                xw.WriteAttributeString("hint-crop", "circle");
+                xw.WriteAttributeString("src", notification.Avatar);
+
+                xw.WriteEndElement();
+            }
+
             xw.WriteEndElement();
 
             xw.WriteEndElement();
@@ -172,6 +182,7 @@ namespace DesktopNotifications.Windows
 
             builder.AddText(notification.Title);
             builder.AddText(notification.Body);
+            if (!String.IsNullOrWhiteSpace(notification.Avatar)) builder.AddAppLogoOverride(new Uri(notification.Avatar), ToastGenericAppLogoCrop.Circle);
 
             foreach (var (title, actionId) in notification.Buttons)
             {

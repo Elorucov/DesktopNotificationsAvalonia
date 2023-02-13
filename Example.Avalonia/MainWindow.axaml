@@ -7,9 +7,10 @@
         x:Class="Example.Avalonia.MainWindow"
         Title="Example.Avalonia">
 
-    <StackPanel Margin="20" Spacing="10">
+    <StackPanel Margin="12" Spacing="12">
         <TextBox Name="TitleTextBox" Watermark="Title" UseFloatingWatermark="True" />
         <TextBox Name="BodyTextBox" Watermark="Body" UseFloatingWatermark="True" />
+        <TextBox Name="ImageTextBox" Watermark="Image (file:///)" UseFloatingWatermark="True" />
 
         <Button Click="Show_OnClick" Content="Show Notification" />
         <Button Click="Schedule_OnClick" Content="Schedule notification (in 5 Seconds)" />
