@@ -2,10 +2,10 @@
 
 	<!--Note: Dotnet currently does not allow to build on non-windows platforms when a windows TFM is specified-->
 	<PropertyGroup Condition=" '$(OS)' != 'Windows_NT' ">
-		<TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
+		<TargetFrameworks>netcoreapp3.1;net6.0</TargetFrameworks>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(OS)' == 'Windows_NT' ">
-		<TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.17763.0</TargetFrameworks>
+		<TargetFrameworks>netcoreapp3.1;net6.0-windows10.0.17763.0</TargetFrameworks>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -14,9 +14,10 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Avalonia" Version="0.10.11" />
-		<PackageReference Include="Avalonia.Desktop" Version="0.10.11" />
-		<PackageReference Include="Avalonia.Diagnostics" Version="0.10.11" />
+		<PackageReference Include="Avalonia" Version="11.0.0-preview5" />
+		<PackageReference Include="Avalonia.Desktop" Version="11.0.0-preview5" />
+		<PackageReference Include="Avalonia.Diagnostics" Version="11.0.0-preview5" />
+		<PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0-preview5" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\DesktopNotifications.Avalonia\DesktopNotifications.Avalonia.csproj" />
